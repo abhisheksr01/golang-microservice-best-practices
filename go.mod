@@ -1,8 +1,8 @@
-module golang-microservice-best-practices
+module github.com/abhisheksr01/golang-microservice-best-practices
 
 go 1.16
 
 require (
-	github.com/cucumber/godog v0.11.0 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
+	github.com/cucumber/godog v0.11.0
+	github.com/stretchr/testify v1.7.0
 )
