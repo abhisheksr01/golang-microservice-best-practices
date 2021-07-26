@@ -42,8 +42,6 @@ func (t *TestState) theUserInvokesTheAPI() (err error) {
 		log.Fatalln(err)
 	}
 
-	defer resp.Body.Close()
-
 	t.apiResponse = resp
 
 	return nil
@@ -89,11 +87,12 @@ func (t *TestState) theUserShouldBeGreetedWithEitherOrOrOr(morningMsg, afternoon
 	} else {
 		expectedGreeting = nightMsg
 	}
+
 	if expectedGreeting != string(b) {
-		log.Fatalln("Response doesn't match")
+		return fmt.Errorf("expected greeting \"%s\" but found \"%s\"", expectedGreeting, string(b))
 	}
 
-	return fmt.Errorf("")
+	return nil
 }
 
 func InitializeScenario(ctx *godog.ScenarioContext) {

@@ -1,2 +1,38 @@
 # golang-microservice-best-practices
 This is a simple simple REST microservice with arguably best practices and integrations for golang.
+
+## Running the unit test
+
+Execute below command from the root of this directory.
+```bash
+go test ./...
+```
+
+## Start the app
+
+Execute below command:
+
+```bash
+go run main.go
+```
+
+Open the browser and make call to the url:
+
+```bash
+http://localhost:5000/greetings/greet/abhishek
+```
+
+You should receive a response with greeting based on the path argument passed after "/greet/" and time of the day.
+
+## Running the bdd test
+
+Make sure the app is still running, we are used godog for writing the tests.
+
+```bash
+go get github.com/cucumber/godog/cmd/godog
+```
+
+Execute below command from the root of this directory.
+```bash
+godog run
+```
