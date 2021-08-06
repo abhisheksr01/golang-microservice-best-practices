@@ -26,7 +26,7 @@ help: ##@others show target help options.
 start: FORCE ##@app start the http app server at http://localhost:5000
 	go run main.go
 
-bdd-godog: FORCE ##@test executes godog BDD tests
+bdd-test: FORCE ##@test executes godog BDD tests
 	godog --format=cucumber > cucumber_report.json;\
     node index.js
 
@@ -34,6 +34,9 @@ test: FORCE ##@test executes unit tests
 	go test ./...
 
 mutation-test: FORCE ##@test executes go-mutesting in ./api/... dir
-	go-mutesting --test-recursive api/...
-
+	rm -rf go-mutesting-error-report.html go-mutesting-ok-report.html output.txt ;\
+    echo "<h1 style="text-align:center" > Mutation Test Error Report </h1><hr>" >> go-mutesting-error-report.html ;\
+    echo "<h1 style="text-align:center" > Mutation Test Success OK Report </h1><hr>" >> go-mutesting-ok-report.html ;\
+    go-mutesting --exec "./test-mutated-package-custom.sh" --test-recursive api/service/... --debug  > output.txt
+    
 FORCE:
