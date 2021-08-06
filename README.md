@@ -1,6 +1,10 @@
 # golang-microservice-best-practices
 This is a simple simple REST microservice with arguably best practices and integrations for golang.
 
+The codebase can be visualized as below:
+
+![Visualization of the codebase](./diagram.svg)
+
 ## Running the unit test
 
 Execute below command from the root of this directory.
