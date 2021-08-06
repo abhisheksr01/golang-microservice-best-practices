@@ -30,6 +30,10 @@ Execute below command:
 ```bash
 go run main.go
 ```
+or
+```bash
+make start
+```
 
 Open the browser and make call to the url:
 
@@ -50,4 +54,8 @@ go get github.com/cucumber/godog/cmd/godog
 Execute below command from the root of this directory.
 ```bash
 godog run
+```
+or
+```bash
+make bdd-test
 ```
