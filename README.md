@@ -7,6 +7,21 @@ Execute below command from the root of this directory.
 ```bash
 go test ./...
 ```
+or
+```bash
+make test
+```
+
+## Running the mutation test
+
+Execute below command from the root of this directory.
+```bash
+go-mutesting --test-recursive api/...
+```
+or
+```bash
+make mutation-test
+```
 
 ## Start the app
 
