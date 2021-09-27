@@ -27,6 +27,9 @@ start: FORCE ##@app start the http app server at http://localhost:5000
 	go run main.go
 
 bdd-test: FORCE ##@test executes godog BDD tests
+	godog
+
+bdd-test-report: FORCE ##@test executes godog BDD tests and generates a json and html report (but requires node and cucumber-html-reporter package)
 	godog --format=cucumber > cucumber_report.json;\
     node index.js
 

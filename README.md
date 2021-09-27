@@ -47,6 +47,11 @@ http://localhost:5000/greetings/greet/abhishek
 
 You should receive a response with greeting based on the path argument passed after "/greet/" and time of the day.
 
+Example:
+```
+Hi abhishek, Good Morning.
+```
+
 ## Running the bdd test
 
 Make sure the app is still running, we are used godog for writing the tests.
